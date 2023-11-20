@@ -1,8 +1,7 @@
+Conceptos 💡
 API REST - Definición y Conceptos Clave:
 
 Una API REST (Representational State Transfer) es un conjunto de principios de arquitectura para la creación de servicios web. Se basa en el protocolo HTTP y se utiliza para facilitar la comunicación e interacción entre sistemas informáticos en Internet. REST no es un estándar en sí mismo, sino un conjunto de restricciones que, cuando se aplican de manera coherente, llevan a un estilo arquitectónico que promueve la escalabilidad, la eficiencia y la flexibilidad.
-![image](https://github.com/NeverMoore26/rev_2_gonzalo/assets/103721934/d47f5aee-d55b-4f98-8671-760ab0499ee6)
-
 
 Elementos Fundamentales de una API REST:
 
@@ -26,3 +25,15 @@ Operaciones Complejas: En algunos casos, se requiere realizar múltiples solicit
 Seguridad: Si bien HTTPS agrega una capa de seguridad, REST no tiene características de seguridad inherentes.
 Gestión de Estado: El enfoque stateless puede requerir estrategias adicionales para manejar el estado del cliente.
 Rendimiento: Para ciertas aplicaciones, protocolos más especializados pueden ofrecer mejor rendimiento.
+
+Capturas de Pantalla 📸
+![image](https://github.com/NeverMoore26/rev_2_gonzalo/assets/103721934/0531b636-aa28-4db1-a8fb-57403507353d)
+
+![image](https://github.com/NeverMoore26/rev_2_gonzalo/assets/103721934/9452f2cb-40a0-40af-a5fc-35a792eb45f2)
+
+![image](https://github.com/NeverMoore26/rev_2_gonzalo/assets/103721934/ff5128c1-822b-4d27-8d58-ce0616e05415)
+
+![image](https://github.com/NeverMoore26/rev_2_gonzalo/assets/103721934/784629c1-191e-4494-b057-137a329ff9da)
+
+
+
