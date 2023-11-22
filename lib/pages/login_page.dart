@@ -1,12 +1,18 @@
+// pages/login_page.dart
 import 'package:flutter/material.dart';
+import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:go_router/go_router.dart';
+import 'package:rev_v2/providers/login_provider.dart';
 import 'package:rev_v2/routes/app_route.dart';
 
-class LoginPage extends StatelessWidget {
+class LoginPage extends ConsumerWidget {
   const LoginPage({super.key});
 
   @override
-  Widget build(BuildContext context) {
+  Widget build(BuildContext context, WidgetRef ref) {
+    final TextEditingController emailController = TextEditingController();
+    final TextEditingController passwordController = TextEditingController();
+
     return Scaffold(
       appBar: AppBar(
         title: const Text('Login Page'),
@@ -28,6 +34,7 @@ class LoginPage extends StatelessWidget {
             ),
             const SizedBox(height: 40),
             TextFormField(
+              controller: emailController,
               decoration: InputDecoration(
                 labelText: 'Email',
                 border: OutlineInputBorder(
@@ -39,6 +46,7 @@ class LoginPage extends StatelessWidget {
             ),
             const SizedBox(height: 20),
             TextFormField(
+              controller: passwordController,
               decoration: InputDecoration(
                 labelText: 'Password',
                 border: OutlineInputBorder(
@@ -51,8 +59,12 @@ class LoginPage extends StatelessWidget {
             const SizedBox(height: 20),
             ElevatedButton(
               onPressed: () {
-                // Aquí implementarías la lógica de verificación antes de navegar al dashboard
-                context.push(AppRoutes.dashboardPage);
+                final String email = emailController.text;
+                final String password = passwordController.text;
+                ref.read(authProvider.notifier).login(email, password);
+                if (ref.read(authProvider as ProviderListenable<bool>)) {
+                  context.push(AppRoutes.dashboardPage);
+                }
               },
               style: ElevatedButton.styleFrom(
                 shape: RoundedRectangleBorder(
@@ -66,10 +78,7 @@ class LoginPage extends StatelessWidget {
             ),
             const SizedBox(height: 20),
             TextButton(
-              onPressed: () {
-                // Navegar a la página de registro
-                context.push(AppRoutes.registerPage);
-              },
+              onPressed: () => context.push(AppRoutes.registerPage),
               child: const Text('No tienes cuenta? Regístrate aquí'),
             ),
           ],
